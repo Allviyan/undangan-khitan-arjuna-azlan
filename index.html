@@ -5,61 +5,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Elegant Transparent Running Text</title>
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: transparent;
-      overflow: hidden;
-      font-family: 'Poppins', sans-serif;
-      color: white;
+/* Container styles */
+.scrolling-text-container {
+    background-color: rgba(51, 73, 125, 0.7);
+    box-shadow: 12px 4px 15px -4px rgba(51, 73, 125, 0.8), -12px 4px 8px -4px rgba(51, 73, 125, 0.8);
+    border-radius:10px ;
+    overflow: hidden;
+}
+
+/* Inner container styles */
+.scrolling-text-inner {
+    display: flex;
+    white-space: nowrap;
+    font-size: 16px;
+    font-weight: 600;
+    color: cyan;
+    padding: 8px 0;
+}
+
+/* Text styles */
+.scrolling-text {
+    display: flex;
+}
+
+.scrolling-text-item {
+    padding: 0 30px;
+}
+
+/* Apply the animation to the text items */
+.scrolling-text-inner>div {
+    animation: var(--direction) var(--marquee-speed) linear infinite;
+}
+
+/* Pause the animation when a user hovers over it */
+.scrolling-text-container:hover .scrolling-text-inner>div {
+    animation-play-state: paused;
+}
+
+/* Setting the Animation using Keyframes */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0%);
     }
 
-    .running-text {
-      position: absolute;
-      width: 100%;
-      top: 50%;
-      transform: translateY(-50%);
-      
-      overflow: hidden;
-      white-space: nowrap;
-    }
-
-    .running-text span {
-      display: inline-block;
-      animation: run-text 40s linear infinite, glow 2s linear infinite;
-      font-size: 2rem;
-      text-shadow: 0 0 30px black;
-      font-weight: bold;
-      color: white;
-    }
-
-    @keyframes run-text {
-      0% {
-        transform: translateX(100%);
-      }
-      100% {
+    100% {
         transform: translateX(-100%);
-      }
+    }
+}
+
+@keyframes scroll-right {
+    0% {
+        transform: translateX(-100%);
     }
 
-    @keyframes glow {
-      0% {
-        text-shadow: 0 0 5px rgba(0, 0, 0, 0.8), 
-                     0 0 10px rgba(0, 0, 0, 0.7);
-                     
-      }
-      100% {
-        text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 
-                     0 0 20px rgba(0, 0, 0, 0.7);
-                     
-      }
+    100% {
+        transform: translateX(0%);
     }
+}
   </style>
 
 </head>
 <body>
-  <div class="running-text">
-    <span>Mau Free Review ? Follow + Tap-Tap 1K Ya Bjir, Review / Comment / Like 10 Coin, Roasting 100 Coin, Ada JJ 100 Coin, Mau Cepet ? YA BALAP TOP GIFT XIXI, LINK DONATE DI BIO YA BJIRRR ROOOWRR</span>
-  </div>
+  <div class="scrolling-text-container">
+    <div class="scrolling-text-inner" style="--marquee-speed: 20s; --direction:scroll-left" role="marquee">
+        <div class="scrolling-text">
+            <div class="scrolling-text-item">Mau Free Ripyu ? Follow + Tap-Tap 1K Ya Bjir :p</div>
+            <div class="scrolling-text-item">Mau Cepet ? Ya Love Oren Lah Bjir xD,</div>
+            <div class="scrolling-text-item">Mau Lebih Cepet ? Ya Jadi Top Gift Dong Rowr :*</div>
+            <div class="scrolling-text-item">Mau Di Roasting + JJ ? 100c Aja Ya Bjirr Rowrrr >< </div>
+            
+  
+            <!-- Add More Items Here -->
+        </div>
+    </div>
+</div>
 </body>
 </html>
