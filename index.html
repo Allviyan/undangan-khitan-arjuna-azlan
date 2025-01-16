@@ -17,9 +17,9 @@
 .scrolling-text-inner {
     display: flex;
     white-space: nowrap;
-    font-size: 16px;
+    font-size: 2rem;
     font-weight: 600;
-    color: cyan;
+    color: rgba(250, 251, 241, 0.9);
     padding: 8px 0;
 }
 
@@ -45,7 +45,7 @@
 /* Setting the Animation using Keyframes */
 @keyframes scroll-left {
     0% {
-        transform: translateX(0%);
+        transform: translateX(20%);
     }
 
     100% {
@@ -67,15 +67,12 @@
 </head>
 <body>
   <div class="scrolling-text-container">
-    <div class="scrolling-text-inner" style="--marquee-speed: 20s; --direction:scroll-left" role="marquee">
+    <div class="scrolling-text-inner" style="--marquee-speed: 30s; --direction:scroll-left" role="marquee">
         <div class="scrolling-text">
             <div class="scrolling-text-item">Mau Free Ripyu ? Follow + Tap-Tap 1K Ya Bjir :p</div>
             <div class="scrolling-text-item">Mau Cepet ? Ya Love Oren Lah Bjir xD,</div>
             <div class="scrolling-text-item">Mau Lebih Cepet ? Ya Jadi Top Gift Dong Rowr :*</div>
             <div class="scrolling-text-item">Mau Di Roasting + JJ ? 100c Aja Ya Bjirr Rowrrr >< </div>
-            
-  
-            <!-- Add More Items Here -->
         </div>
     </div>
 </div>
